@@ -1,5 +1,6 @@
 package br.com.deal.estagio.agosoto.nid.controllers;
 
+import br.com.deal.estagio.dto.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,7 @@ public class UserController {
     // Método PUT da API
     @PostMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public String update(@PathParam("id") Long id, @RequestBody Body UserDTO user){
+    public String update(@PathParam("id") Long id, @RequestBody UserDTO user){
         log.info("update {} {} ", id, user);
         return "ok deal by id";
     }
@@ -44,7 +45,7 @@ public class UserController {
     // Método DELETE da API
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathParam("id") Long id) {
+    public String delete(@PathParam("id") Long id) {
         log.info("delete {}", id);
         return "ok deal by id";
     }
