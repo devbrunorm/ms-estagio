@@ -35,7 +35,7 @@ public class UserController {
     }
 
     // Método PUT da API
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String update(@PathParam("id") Long id, @RequestBody UserDTO user){
         log.info("update {} {} ", id, user);
@@ -51,7 +51,7 @@ public class UserController {
     }
 
     // Método PATCH da API
-    @DeleteMapping("/{id}/bloquear")
+    @PatchMapping("/{id}/bloquear")
     @ResponseStatus(HttpStatus.OK)
     public String bloqueia(@PathParam("id") Long id) {
         log.info("bloqueia {}", id);
@@ -59,7 +59,7 @@ public class UserController {
     }
 
     // Método PATCH da API
-    @DeleteMapping("/{id}/desbloquear")
+    @PatchMapping("/{id}/desbloquear")
     @ResponseStatus(HttpStatus.OK)
     public String desbloqueia(@PathParam("id") Long id) {
         log.info("desbloqueia {}", id);

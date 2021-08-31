@@ -1,1 +1,3 @@
-
+server:
+  servlet:
+    context-path: /estagio/v1/users
